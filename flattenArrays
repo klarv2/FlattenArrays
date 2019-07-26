@@ -1,0 +1,16 @@
+const a = [[1,2,[3]],4]
+const b = [1,2,3,4]
+
+a.push(b);
+
+try { JSON.stringify(a); log("failed") } catch(e) { log("Cyclic JSON.stringify Throws : " + e.message) } 
+
+// flatten 
+
+const flat = (""+a).split(",").map(Number);
+
+// Result
+
+log("Flat using string " + flat.join("-"));
+
+console.log(flat);
